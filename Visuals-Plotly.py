@@ -4,14 +4,14 @@ import plotly.express as px
 st.title("Plotly Visualizations!!!")
 
 #### Data For Charts
-covid= pd.read_csv(r"C:\Users\abdal\Desktop\5visuals\Covid_death_DATA.csv")
+
 co2=pd.read_csv(r"C:\Users\abdal\Desktop\co2_emission_data.csv")
 sb= pd.read_csv(r"C:\Users\abdal\Desktop\5visuals\Starbucks satisfactory survey_DATA.csv")
 fig1= px.scatter(co2,x="Year",y="Co2 Emission",color="Country",hover_name="Country",title="Yearly Co2 Emission by Country")
 fig2=px.histogram(co2,x="Year",y="Co2 Emission",color="Country",title="Co2 Emission per Year",hover_name="Country")
 fig3=fig=px.bar(co2,x="Country",y="Co2 Emission",color="Country",animation_frame="Year",animation_group="Country",range_y=[0,9000000000])
 fig4=px.pie(sb, values="How would you rate the price range at Starbucks?", names="Gender",title="Rating Starbucks Prices Based on Gender")
-fig5=px.treemap(covid,path=['country'],values="covid_deaths",title="Total Covid Deaths (2020-2022)")
+
 
 df = pd.DataFrame({
     'first column': ['1','2','3','4','5'],
@@ -60,13 +60,7 @@ if '4' in option:
          st.balloons()
     
     
-if '5' in option:
-     st.plotly_chart(fig5)
-     info= st.checkbox("More info")
-     if info: 
-         st.write("The above VISUAL is a TREEMAP showing covid deaths from 2020 to 2022")
-     if info:
-         st.balloons()
+
      
     
 
