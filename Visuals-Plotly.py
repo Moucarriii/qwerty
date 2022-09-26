@@ -28,7 +28,7 @@ if '1' in option :
     st.plotly_chart(fig1) 
     info= st.checkbox("More info")
     if info: 
-        st.write("The above VISUAL is a SCATTER PLOT showing the  emission of CO2 of several Countries since 1940")
+        st.write("The above VISUAL is a SCATTER PLOT showing the  emission of CO2 of several Countries since 1940. As observed, China and the United States are the top leading counrties in Co2 Emission")
     if info:
         st.balloons()
     
