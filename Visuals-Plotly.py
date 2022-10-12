@@ -25,6 +25,8 @@ option = st.selectbox(
 'You selected: ', option
 
 if '1' in option :
+    slider_year = st.slider("Choose Year Range", max_value = 2020, min_value = 1940, value = [1940, 2020], step=10)
+    co2_2 = co2.loc[(co2["Year"] >= slider_year[0]) & (co2["Year"] <= slider_year[1])]
     st.plotly_chart(fig1) 
     info= st.checkbox("More info")
     if info: 
