@@ -7,7 +7,6 @@ st.title("Plotly Visualizations!!!")
 covid= pd.read_csv(r"Covid_death_DATA.csv")
 co2=pd.read_csv(r"co2_emission_data.csv")
 sb= pd.read_csv(r"Starbucks satisfactory survey_DATA.csv")
-fig1= px.scatter(co2,x="Year",y="Co2 Emission",color="Country",hover_name="Country",title="Yearly Co2 Emission by Country")
 fig2=px.histogram(co2,x="Year",y="Co2 Emission",color="Country",title="Co2 Emission per Year",hover_name="Country")
 fig3=fig=px.bar(co2,x="Country",y="Co2 Emission",color="Country",animation_frame="Year",animation_group="Country",range_y=[0,9000000000])
 fig4=px.pie(sb, values="How would you rate the price range at Starbucks?", names="Gender",title="Rating Starbucks Prices Based on Gender")
@@ -27,6 +26,8 @@ option = st.selectbox(
 if '1' in option :
     slider_year = st.slider("Choose Year Range", max_value = 2020, min_value = 1940, value = [1940, 2020], step=10)
     co2_2 = co2.loc[(co2["Year"] >= slider_year[0]) & (co2["Year"] <= slider_year[1])]
+    fig1= px.scatter(co2_2,x="Year",y="Co2 Emission",color="Country",hover_name="Country",title="Yearly Co2 Emission by Country")
+
     st.plotly_chart(fig1) 
     info= st.checkbox("More info")
     if info: 
