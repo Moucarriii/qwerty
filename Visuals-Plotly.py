@@ -37,6 +37,10 @@ if '1' in option :
     
     
 if '2' in option:
+    slider_years = st.slider("Choose Year Range", max_value = 2015, min_value = 1940, value = [1940, 2015], step=10)
+    co2_y = co2.loc[(co2["Year"] >= slider_year[0]) & (co2["Year"] <= slider_year[1])]
+    fig2=px.histogram(co2_y,x="Year",y="Co2 Emission",color="Country",title="Co2 Emission per Year",hover_name="Country")
+
      st.plotly_chart(fig2)
      info= st.checkbox("More info")
      if info: 
