@@ -50,12 +50,12 @@ if '2' in option:
     
 if '3' in option:
     optionz = st.selectbox("Select Building", Country)
-    co2 = co2[co2["Country"]==options]
+    co2 = co2[co2["Country"]==optionz]
     st.plotly_chart(fig3)
     info= st.checkbox("More info")
-     if info: 
+    if info: 
          st.write("The above VISUAL is a BAR GRAPH showing the emission of CO2 of several Countries since 1940")
-     if info:
+    if info:
          st.balloons()
     
     
